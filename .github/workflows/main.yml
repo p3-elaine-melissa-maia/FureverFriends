@@ -1,0 +1,17 @@
+name: Deploy
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: akhileshns/heroku-deploy@v3.12.11
+        with:
+          heroku_api_key: ${{7d3522f2-fb49-45a6-be9e-f5ae8466322a}}
+          heroku_app_name: "furever-friends-09172022"
+          heroku_email: "mmdeven@gmail.com"
