@@ -16,7 +16,7 @@ function App() {
     <ApolloProvider client={client}>
       <Router>
         <div className="flex-column justify-center align-center min-100-vh bg-primary">
-          <Switch>
+          <Routes>
             <Route 
               path="/" 
               element={<Home />}
@@ -33,7 +33,7 @@ function App() {
               path="*"
               element={<NotFound />}
             />
-          </Switch>
+          </Routes>
         </div>
       </Router>
     </ApolloProvider>
