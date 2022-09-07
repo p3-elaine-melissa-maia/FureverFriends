@@ -1,13 +1,32 @@
-const { Schema, model } = require('mongoose');
+const mongoose = require('mongoose');
 
-const techSchema = new Schema({
-  name: {
+const { Schema } = mongoose;
+const commentSchema = require('./Comment');
+
+const postSchema = new Schema({
+  username: {
     type: String,
     required: true,
     unique: true,
   },
+  img: {
+    type: String,
+  },
+  caption: {
+    type: String,
+    required: true,
+  },
+  createdAt: {
+    type: Date,
+    default: Date.now,
+    get: createdAtVal => dateFormat(createdAtVal)
+  },
+  comments: [commentSchema.schema]
 });
 
-const Tech = model('Tech', techSchema);
+const Post = mongoose.model('Post', postSchema);
 
-module.exports = Tech;
+module.exports = Post;
+
+
+
