@@ -1,13 +1,32 @@
 const db = require('../config/connection');
-const { Tech } = require('../models');
+const { User, Post, Comment } = require('../models');
 
-const techData = require('./techData.json');
+const seedData = require('./seedData.js');
+
+const { getUser, getPost, getComment } = require('./seedData');
+
+db.on('error', (err) => err);
 
 db.once('open', async () => {
-  await Tech.deleteMany({});
+  console.log('connected');
+  await Post.deleteMany({});
+  await User.deleteMany({});
+  await Comment.deleteMany({});
 
-  const technologies = await Tech.insertMany(techData);
+  const users = getUser();
+  const posts = getPost();
+  const comments = getComment();
+  
+  console.log(users);
 
-  console.log('Technologies seeded!');
+  await User.collection.insertMany(users);
+  await Post.collection.insertMany(posts);
+  await Comment.collection.insertMany(comments);
+ 
+  console.table(users);
+  console.table(posts);
+  console.table(comments);
+
+  console.info('Seeding complete! 🌱');
   process.exit(0);
 });
