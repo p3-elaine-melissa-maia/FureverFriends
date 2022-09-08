@@ -84,7 +84,5 @@ const getComment = () => {
   return comments;
 }
 
-
-
 // Export the functions for use in seed.js
 module.exports = { getUser, getPost, getComment };

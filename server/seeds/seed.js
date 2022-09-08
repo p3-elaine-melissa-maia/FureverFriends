@@ -19,6 +19,17 @@ db.once('open', async () => {
   
   console.log(users);
 
+  // alternative to line 33
+  // for (let index = 0; index < users.length; index++) {
+  //   await User.create({
+  //     username: users[index].username,
+  //     fullname: users[index].fullname,
+  //     email: users[index].email,
+  //     password: users[index].password,
+  //   });
+  // }
+
+  console.log('users seeded');
   await User.collection.insertMany(users);
   await Post.collection.insertMany(posts);
   await Comment.collection.insertMany(comments);
