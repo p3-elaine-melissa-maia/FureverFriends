@@ -5,7 +5,7 @@ const { signToken } = require('../utils/auth');
 const resolvers = {
   Query: {
     users: async () => {
-      // populaate posts and comments subdocuments when querying for users
+      // populate posts and comments subdocuments when querying for users
       return await User.find({}).populate('posts').populate({
         path: 'posts',
         populate: 'comments'
