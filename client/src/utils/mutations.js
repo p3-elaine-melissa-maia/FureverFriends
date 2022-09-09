@@ -11,14 +11,23 @@ export const LOGIN = gql`
   }
 `;
 
-// export const CREATE_VOTE = gql`
-//   mutation createVote($_id: String!, $techNum: Int!) {
-//     createVote(_id: $_id, techNum: $techNum) {
-//       _id
-//       tech1
-//       tech2
-//       tech1_votes
-//       tech2_votes
-//     }
-//   }
-// `;
+export const ADD_USER = gql`
+  mutation addUser(
+    $username: String!
+    $fullname: String!
+    $email: String!
+    $password: String!
+  ) {
+    addUser(
+      firstName: $firstName
+      lastName: $lastName
+      email: $email
+      password: $password
+    ) {
+      token
+      user {
+        _id
+      }
+    }
+  }
+`;
