@@ -1,14 +1,13 @@
 import React from 'react';
-
-import '../styles/Home.css';
+import '../styles/Navbar.css';
 
 function Navbar() {
     return(
-        <section>
+    <div className='navbar'>
         <input type="checkbox" id="check"/>
             <header>
                 <h2 className="logo">Furever <i className="fa-solid fa-paw"></i> Friends</h2>
-                <div className="navigation">
+            <div className="navigation">
                     <a href="#">Home</a>
                     <a href="#">Adopt</a>
                     <a href="#">Donate</a>
@@ -19,7 +18,7 @@ function Navbar() {
                     <i className="fas fa-times close-btn"></i>
                 </label>
             </header>
-        </section>
+    </div>
     );
 }
 
