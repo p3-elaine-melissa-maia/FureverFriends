@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { useMutation } from "@apollo/client";
 import Auth from "../utils/auth";
 import { ADD_USER } from "../utils/mutations";
+
 import '../styles/SignupLogin.css'
 
 function Signup(props) {
@@ -39,22 +40,22 @@ function Signup(props) {
       <h2>Sign Up</h2>
       <form onSubmit={handleFormSubmit}>
         <div>
-          <label htmlFor="userName">username:</label>
+          <label htmlFor="username">username:</label>
           <input
             placeholder="username"
-            name="userName"
-            type="userName"
-            id="userName"
+            name="username"
+            type="username"
+            id="username"
             onChange={handleChange}
           />
         </div>
         <div>
-          <label htmlFor="fullName">full name:</label>
+          <label htmlFor="fullname">full name:</label>
           <input
             placeholder="full name"
-            name="fullName"
-            type="fullName"
-            id="fullName"
+            name="fullname"
+            type="fullname"
+            id="fullname"
             onChange={handleChange}
           />
         </div>
@@ -69,12 +70,12 @@ function Signup(props) {
           />
         </div>
         <div>
-          <label htmlFor="pwd">password:</label>
+          <label htmlFor="password">password:</label>
           <input
             placeholder="password"
             name="password"
             type="password"
-            id="pwd"
+            id="password"
             onChange={handleChange}
           />
         </div>
