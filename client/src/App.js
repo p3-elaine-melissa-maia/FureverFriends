@@ -5,7 +5,7 @@ import Home from './pages/Home';
 
 import Navbar from './components/Navbar';
 
-import NotFound from './pages/NotFound';
+// import NotFound from './pages/NotFound';
 
 import Login from './pages/Login';
 import Signup from './pages/Signup';
