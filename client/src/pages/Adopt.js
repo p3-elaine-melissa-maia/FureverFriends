@@ -5,7 +5,7 @@ import '../styles/Home.css'
 import { Link } from "react-router-dom";
 
 
-const Home = () => {
+const Adopt = () => {
   // const { loading, data } = useQuery(QUERY_MATCHUPS, {
   //   fetchPolicy: "no-cache"
   // });
@@ -27,4 +27,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default Adopt;
