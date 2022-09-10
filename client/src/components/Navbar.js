@@ -1,5 +1,6 @@
 import React from 'react';
 import '../styles/Navbar.css';
+import { Link } from "react-router-dom";
 
 function Navbar() {
     return(
@@ -8,8 +9,9 @@ function Navbar() {
             <header>
                 <h2 className="logo">Furever <i className="fa-solid fa-paw"></i> Friends</h2>
             <div className="navigation">
-                    <a href="#">Home</a>
-                    <a href="#">Adopt</a>
+                    <Link to="/">Home</Link>
+                    <Link to="/adopt">Adopt</Link>
+                    
                     <a href="#">Donate</a>
                     <a href="#">Our Team</a>
                 </div>

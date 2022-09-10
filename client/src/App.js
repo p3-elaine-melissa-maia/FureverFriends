@@ -9,6 +9,9 @@ import Navbar from './components/Navbar';
 
 import Login from './pages/Login';
 import Signup from './pages/Signup';
+import Adopt from './pages/Adopt';
+import Feed from './pages/Feed';
+import Profile from './pages/Profile';
 
 
 const client = new ApolloClient({
@@ -26,15 +29,29 @@ function App() {
             
             <Route 
             path="/" 
-            element={<><Home/></>}/>
+            element={<Home/>}
+            />
             <Route 
-              path="/matchup" 
+              path="/login" 
               element={<Login />}
             />
             <Route 
-              path="/matchup/:id" 
+              path="/signup" 
               element={<Signup />}
             />
+            <Route
+              path="/feed"
+              element={<Feed/>}
+            />
+            <Route
+              path="/adopt"
+              element={<Adopt/>}
+            />
+            <Route
+              path="/profile"
+              element={<Profile/>}
+            />
+
           </Routes>
         </div>
       </Router>
