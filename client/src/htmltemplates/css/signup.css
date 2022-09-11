@@ -7,9 +7,9 @@
     font-family: "Poppins", sans-serif;
 }
 
-section {
+section{
     position: relative;
-    width: 100%;
+    width: 100vw;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
@@ -17,9 +17,9 @@ section {
     background: url('../assets/animateddogs.jpg')no-repeat;
     background-size: cover;
     background-position: center;
-} 
+}
 
-/* header{
+header{
     position: relative;
     top: 0;
     width: 100%;
@@ -42,7 +42,7 @@ header .logo{
 
 header .navigation a{
     color: #8DD9D1;
-    background: #ECF5A8;
+    border: 2px #49AAf5;
     text-decoration: none;
     font-weight: 500;
     letter-spacing: 1px;
@@ -56,41 +56,53 @@ header .navigation a:not(:last-child){
 
 header .navigation a:hover{
     color: #49AAf5;
-} */
-
-.content{
-    max-width: 650px;
-    margin: 60px 100px;
 }
 
-.content .info h2{
+.form{
+    max-width: 650px;
+    margin: auto;
+    width: 50%;
+    padding: 10px;
+}
+
+.form h2{
     background-color: #ECF5A8;
     border-radius: 20px;
     color: #8DD9D1;
-    font-size: 55px;
+    font-size: 30px;
     text-transform: lowercase;
-    font-weight: 800;
+    font-weight: 500;
     letter-spacing: 2px;
     line-height: 60px;
-    margin-bottom: 30px;
-    padding: 20px;
+    margin: auto;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    padding: 5px;
+    text-align: center;
 }
 
-.content .info h2 span{
-    margin-left: 60px;
-    color: #49AAf5;
-}
-
-.content .info p{
-    font-size: 16px;
-    font-weight: 700;
-    margin-bottom: 40px;
-    background-color: #49AAf5;
+form{
+    background-color: #8DD9D1;
     border-radius: 20px;
-    padding: 20px;
+    font-size: 30px;
+    text-transform: lowercase;
+    font-weight: 500;
+    letter-spacing: 2px;
+    line-height: 60px;
+    margin: auto;
+    padding: 5px;
+    text-align: center;
 }
 
-.content .info a{
+form input{
+    width: 60%;
+    height: 40px;
+    border-radius: 20px;
+    padding-left: 10px;
+}
+
+
+form button{
     color: #8DD9D1;
     background: #ECF5A8;
     text-decoration: none;
@@ -99,16 +111,31 @@ header .navigation a:hover{
     letter-spacing: 1px;
     padding: 2px 15px;
     border-radius: 20px;
-    margin-right: 10px;
 }
 
-.content .info a:hover{
+form button:hover{
     color: #49AAf5;
 }
 
-/* label{
+.form a{
+    color: #ECF5A8;
+    background: #8DD9D1;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 25px;
+    letter-spacing: 1px;
+    padding: 2px 15px;
+    border-radius: 20px;
+    margin-bottom: 20px;
+}
+
+.form a:hover{
+    color: #49AAf5;
+}
+
+label{
     display: none;
-} */
+}
 
 #check{
     z-index: 3;
@@ -118,7 +145,7 @@ header .navigation a:hover{
 /* responsive styles */
 
 @media (max-width: 960px){
-    /* header .navigation{
+    header .navigation{
         display: none;
     }
 
@@ -176,7 +203,8 @@ header .navigation a:hover{
     header .logo{
         position: absolute;
         bottom: -6px;
-    } */
+        left: 2.4em;
+    }
 
     .content .info h2{
         font-size: 45px;

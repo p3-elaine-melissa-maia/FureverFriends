@@ -18,7 +18,9 @@
     background-position: center;
 }
 
-
+label{
+    display: none;
+}
 
 header{
     position: relative;
@@ -65,14 +67,25 @@ header .navigation a:hover{
         display: none;
     }
 
-    label{
+    label .menu-btn{
         display: block;
         font-size: 25px;
         cursor: pointer;
         color: #8DD9D1;
     }
 
-    label:hover{
+    label .close-btn{
+        display: block;
+        font-size: 25px;
+        cursor: pointer;
+        color: #8DD9D1;
+    }
+
+    label .menu-btn:hover{
+        color: #49AAf5;
+    }
+
+    label .close-btn:hover{
         color: #49AAf5;
     }
 

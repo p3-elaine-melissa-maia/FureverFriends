@@ -4,6 +4,8 @@ import { useMutation } from "@apollo/client";
 import Auth from "../utils/auth";
 import { ADD_USER } from "../utils/mutations";
 
+import '../styles/SignupLogin.css'
+
 function Signup(props) {
   const [formState, setFormState] = useState({ email: "", password: "" });
   const [addUser] = useMutation(ADD_USER);
@@ -31,56 +33,58 @@ function Signup(props) {
   };
 
   return (
-    <div className="container my-1">
-      <Link to="/login">← Go to Login</Link>
+    <section>
+      <div className="form">
+      <Link to="/login">← go to log in </Link>
 
-      <h2>Signup</h2>
+      <h2>Sign Up</h2>
       <form onSubmit={handleFormSubmit}>
-        <div className="flex-row space-between my-2">
-          <label htmlFor="userName">Username:</label>
+        <div>
+          <label htmlFor="username">username:</label>
           <input
-            placeholder="User"
-            name="userName"
-            type="userName"
-            id="userName"
+            placeholder="username"
+            name="username"
+            type="username"
+            id="username"
             onChange={handleChange}
           />
         </div>
-        <div className="flex-row space-between my-2">
-          <label htmlFor="fullName">Full Name:</label>
+        <div>
+          <label htmlFor="fullname">full name:</label>
           <input
-            placeholder="Full"
-            name="fullName"
-            type="fullName"
-            id="fullName"
+            placeholder="full name"
+            name="fullname"
+            type="fullname"
+            id="fullname"
             onChange={handleChange}
           />
         </div>
-        <div className="flex-row space-between my-2">
-          <label htmlFor="email">Email:</label>
+        <div>
+          <label htmlFor="email">email address:</label>
           <input
-            placeholder="youremail@test.com"
+            placeholder="email"
             name="email"
             type="email"
             id="email"
             onChange={handleChange}
           />
         </div>
-        <div className="flex-row space-between my-2">
-          <label htmlFor="pwd">Password:</label>
+        <div>
+          <label htmlFor="password">password:</label>
           <input
-            placeholder="******"
+            placeholder="password"
             name="password"
             type="password"
-            id="pwd"
+            id="password"
             onChange={handleChange}
           />
         </div>
-        <div className="flex-row flex-end">
+        <div>
           <button type="submit">Submit</button>
         </div>
       </form>
-    </div>
+      </div>
+    </section>
   );
 }
 
