@@ -1,8 +1,7 @@
 import { useState } from "react";
 import ReactDOM from "react-dom/client";
 
-
-function PetForm() {
+function Adopt() {
   const [inputs, setInputs] = useState({});
 
   const handleChange = (event) => {
@@ -43,7 +42,5 @@ function PetForm() {
   )
 }
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(<PetForm />);
 
-export default PetForm;
+export default Adopt;
