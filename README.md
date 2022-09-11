@@ -2,16 +2,19 @@
 
 ## Description
 
-Provide a short description explaining the what, why, and how of your project. Use the following questions as a guide:
+This application is an accessible pet social media app where users with a variety of abilities can share photos of their pets, friend other pet owners, comment and like photos, as well as have the option to adopt a new pet.
 
 ## Table of Contents
 
-If your README is long, add a table of contents to make it easy for users to find what they need.
-
+- [Installation](#installation)
 - [Technology](#technology)
-- [Usage](#usage)
+- [User Story](#user-story)
 - [Contact](#contact)
-- [License](#license)
+- [Links](#links)
+
+## Installation
+
+Our application was built using the MERN (MongoDB, Express.js, React.js, and Node.js) stack.
 
 ## Technology
 
@@ -30,15 +33,23 @@ Back-End Technology
     - JWT
     - Bcrypt
 
-## Usage
+## User-Story
 
-Provide instructions and examples for use. Include screenshots as needed.
+AS A pet lover who wants to interact with others or become a pet owner, 
 
-To add a screenshot, create an `assets/images` folder in your repository and upload your screenshot to it. Then, using the relative filepath, add it to your README using the following syntax:
+I WANT to be able to login or sign-up as a new user to an application,
 
-    ```md
-    ![alt text](assets/images/screenshot.png)
-    ```
+SO THAT I can view adoptable pets by specific search criteria, such as zip code,
+
+AND SO I can find my next furever friend,
+
+AND I WANT to be able to upload pictures of my pet once adopted in order to share with other users,
+
+SO THAT other users can view my images, comment on photos, and favorite images,
+
+I WANT to able to ‘friend’ other users
+
+SO THAT I can like and comment on their posts
 
 ## Contact
 
@@ -49,6 +60,12 @@ Maia Davis - https://github.com/maiavelli
 Melissa Deven - https://github.com/Deven1991 
 Ethan Torres - https://github.com/ethantor12
 
-## License
+## Links
 
-The last section of a high-quality README file is the license. This lets other developers know what they can and cannot do with your project. If you need help choosing a license, refer to [https://choosealicense.com/](https://choosealicense.com/).
+GitHub Repo: https://github.com/p3-elaine-melissa-maia/FureverFriends.git
+Deployed Heroku: https://furever-friends-09172022.herokuapp.com/
+
+
+    ```md
+    ![alt text](assets/images/screenshot.png)
+    ```
