@@ -1,30 +1,46 @@
-import React from 'react';
-// import { Link } from 'react-router-dom';
-// import { useQuery } from '@apollo/client';
-import '../styles/Home.css'
-import { Link } from "react-router-dom";
+import { useState } from "react";
+import ReactDOM from "react-dom/client";
 
+function PetForm() {
+  const [inputs, setInputs] = useState({});
 
-const Adopt = () => {
-  // const { loading, data } = useQuery(QUERY_MATCHUPS, {
-  //   fetchPolicy: "no-cache"
-  // });
+  const handleChange = (event) => {
+    const name = event.target.name;
+    const value = event.target.value;
+    setInputs(values => ({...values, [name]: value}))
+  }
 
-  // const matchupList = data?.matchups || [];
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    console.log(inputs);
+  }
 
   return (
-    <section>
-      {/* <Navbar></Navbar> */}
-      <div className="content">
-        <div className="info">
-            <h2> Find Your <br/> <span>Furever Friend <i className="fa-solid fa-heart"></i></span></h2>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum laboriosam illum ratione quas iste inventore provident laborum, voluptate, reiciendis voluptas officiis distinctio doloribus magni, reprehenderit tempora. Id, molestiae. Ipsam, consequatur.</p>
-            <Link to="/signup"><a href="./signup" className="signup-btn">Sign Up Now!</a></Link>
-            <Link to="/login"> <a href="./login" className="login-btn">Log In</a></Link>
-        </div>
-    </div>
-  </section>
-  );
-};
+    <form onSubmit={handleSubmit}>
+      <label>Select a species.</label>
+      <select
+        id="species"
+        value={inputs.species}
+        onChange={handleChange}
+        name="species"
+        >
 
-export default Adopt;
+        <option value="dog">Dog</option>
+        <option value="cat">Cat</option>
+        </select>
+
+      <label>Enter ZIP Code:
+        <input 
+          type="number" 
+          name="zip" 
+          value={inputs.zip || ""} 
+          onChange={handleChange}
+        />
+        </label>
+        <input type="submit" />
+    </form>
+  )
+}
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(<PetForm />);
