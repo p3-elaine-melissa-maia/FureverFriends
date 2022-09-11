@@ -1,5 +1,8 @@
 import { useState } from "react";
-import ReactDOM from "react-dom/client";
+import React from 'react';
+// import { Link } from 'react-router-dom';
+// import { useQuery } from '@apollo/client';
+import '../styles/Home.css'
 
 function Adopt() {
   const [inputs, setInputs] = useState({});
