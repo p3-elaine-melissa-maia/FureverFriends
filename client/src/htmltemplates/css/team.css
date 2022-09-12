@@ -58,52 +58,59 @@ header .navigation a:hover{
     color: #49AAf5;
 }
 
-
-.content{
+.team {
     max-width: 650px;
-    margin: 60px 100px;
+    margin: auto;
+    width: 50%;
+    padding: 10px;
 }
-
-.content .info h2{
+.team h2{
     background-color: #ECF5A8;
     border-radius: 20px;
     color: #8DD9D1;
-    font-size: 55px;
+    font-size: 35px;
     text-transform: lowercase;
-    font-weight: 800;
+    font-weight: 700;
     letter-spacing: 2px;
     line-height: 60px;
-    margin-bottom: 30px;
-    padding: 20px;
+    margin-bottom: 20px;
+    padding: 5px;
+    text-align: center;
 }
 
-.content .info h2 span{
-    margin-left: 60px;
-    color: #49AAf5;
-}
 
-.content .info p{
-    font-size: 16px;
+.team h3{
+    background-color: #8DD9D1;
+    color:#ECF5A8;
+    border-radius: 20px;
+    margin: auto;
+    margin-bottom: 20px;
+    padding: 5px;
+    font-size: 30px;
+    text-transform: lowercase;
     font-weight: 700;
-    margin-bottom: 40px;
-    background-color: #49AAf5;
+    letter-spacing: 2px;
+    line-height: 60px;
+    text-align: center;
+    padding-top: 20px;
+    
+}
+
+.team p{
+    font-size: 16px;
+    font-weight: 500;
+    margin-bottom: 30px;
+    background-color: #ECF5A8;
+    color: black;
     border-radius: 20px;
     padding: 20px;
+    text-align: center;
 }
 
-.content .info a{
-    color: #8DD9D1;
-    background: #ECF5A8;
-    text-decoration: none;
-    font-weight: 500;
-    font-size: 25px;
-    letter-spacing: 1px;
-    padding: 2px 15px;
-    border-radius: 20px;
-}
-
-.content .info a:hover{
-    color: #49AAf5;
+.team img{
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
 }
 
 label{
