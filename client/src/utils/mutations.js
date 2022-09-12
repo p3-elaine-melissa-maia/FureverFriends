@@ -31,3 +31,15 @@ export const ADD_USER = gql`
     }
   }
 `;
+
+// export const ADD_POST = gql`
+//   mutation addPost($userId: ID!, $img: String!, $caption: String!) {
+//     addPost($userId: userId, $img: img, $caption: caption) {
+//       _id
+//       username
+//       img
+//       caption
+//     }
+//   }
+// `;
+
