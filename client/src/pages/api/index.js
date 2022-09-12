@@ -21,6 +21,7 @@ export default () => {
     };
 
     fetchPets();
+    console.log(fetchPets)
   }, [accessToken]);
 
   // displays results

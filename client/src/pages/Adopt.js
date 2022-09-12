@@ -45,5 +45,4 @@ function Adopt() {
   )
 }
 
-
 export default Adopt;
