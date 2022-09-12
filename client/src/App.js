@@ -1,12 +1,15 @@
+
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { ApolloClient, ApolloProvider, InMemoryCache, createHttpLink } from '@apollo/client';
 import { setContext } from '@apollo/client/link/context';
 import Home from './pages/Home';
 
-import Navbar from './components/Navbar';
+
+import Navbar from "./components/Navbar";
 
 // import NotFound from './pages/NotFound';
+
 
 import Login from './pages/Login';
 import Signup from './pages/Signup';
@@ -42,8 +45,9 @@ function App() {
     <ApolloProvider client={client}>
       <Router>
         <div className="flex-column justify-center align-center min-100-vh bg-primary">
-          <Navbar/>
+          <Navbar />
           <Routes>
+
             
             <Route 
             path="/" 
@@ -73,6 +77,9 @@ function App() {
               path="/users/:userId"
               element={<Profile/>}
             />
+
+
+            <Route path="/team" element={<Team />} />
 
           </Routes>
         </div>
