@@ -6,12 +6,6 @@ import { Link } from "react-router-dom";
 
 
 const Home = () => {
-  // const { loading, data } = useQuery(QUERY_MATCHUPS, {
-  //   fetchPolicy: "no-cache"
-  // });
-
-  // const matchupList = data?.matchups || [];
-
   return (
     <section>
       {/* <Navbar></Navbar> */}
