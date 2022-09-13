@@ -7,7 +7,7 @@
     font-family: "Poppins", sans-serif;
 }
 
-section {
+section{
     position: relative;
     width: 100%;
     min-height: 100vh;
@@ -17,9 +17,9 @@ section {
     background: url('../assets/animateddogs.jpg')no-repeat;
     background-size: cover;
     background-position: center;
-} 
+}
 
-/* header{
+header{
     position: relative;
     top: 0;
     width: 100%;
@@ -29,6 +29,7 @@ section {
     align-items: center;
     background: #ECF5A8;
 }
+
 header .logo{
     position: relative;
     color: #8DD9D1;
@@ -38,73 +39,83 @@ header .logo{
     font-weight: 800;
     letter-spacing: 1px;
 }
+
 header .navigation a{
     color: #8DD9D1;
-    background: #ECF5A8;
+    border: 2px #49AAf5;
     text-decoration: none;
     font-weight: 500;
     letter-spacing: 1px;
     padding: 2px 15px;
     border-radius: 20px;
 }
+
 header .navigation a:not(:last-child){
     margin-right: 30px;
 }
+
 header .navigation a:hover{
     color: #49AAf5;
-} */
-
-.content{
-    max-width: 650px;
-    margin: 60px 100px;
 }
 
-.content .info h2{
+.team {
+    max-width: 650px;
+    margin: auto;
+    width: 50%;
+    padding: 10px;
+}
+.team h2{
     background-color: #ECF5A8;
     border-radius: 20px;
     color: #8DD9D1;
-    font-size: 55px;
+    font-size: 35px;
     text-transform: lowercase;
-    font-weight: 800;
+    font-weight: 700;
     letter-spacing: 2px;
     line-height: 60px;
-    margin-bottom: 30px;
-    padding: 20px;
+    margin-bottom: 20px;
+    padding: 5px;
+    text-align: center;
 }
 
-.content .info h2 span{
-    margin-left: 60px;
-    color: #49AAf5;
-}
 
-.content .info p{
-    font-size: 16px;
+.team h3{
+    background-color: #8DD9D1;
+    color:#ECF5A8;
+    border-radius: 20px;
+    margin: auto;
+    margin-bottom: 20px;
+    padding: 5px;
+    font-size: 30px;
+    text-transform: lowercase;
     font-weight: 700;
-    margin-bottom: 40px;
-    background-color: #49AAf5;
+    letter-spacing: 2px;
+    line-height: 60px;
+    text-align: center;
+    padding-top: 20px;
+    
+}
+
+.team p{
+    font-size: 16px;
+    font-weight: 500;
+    margin-bottom: 30px;
+    background-color: #ECF5A8;
+    color: black;
     border-radius: 20px;
     padding: 20px;
+    text-align: center;
 }
 
-.content .info a{
-    color: #8DD9D1;
-    background: #ECF5A8;
-    text-decoration: none;
-    font-weight: 500;
-    font-size: 25px;
-    letter-spacing: 1px;
-    padding: 2px 15px;
-    border-radius: 20px;
-    margin-right: 10px;
+.team img{
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
 }
 
-.content .info a:hover{
-    color: #49AAf5;
-}
-
-/* label{
+label{
     display: none;
-} */
+}
 
 #check{
     z-index: 3;
@@ -114,21 +125,25 @@ header .navigation a:hover{
 /* responsive styles */
 
 @media (max-width: 960px){
-    /* header .navigation{
+    header .navigation{
         display: none;
     }
+
     label{
         display: block;
         font-size: 25px;
         cursor: pointer;
         color: #8DD9D1;
     }
+
     label:hover{
         color: #49AAf5;
     }
+
     label .close-btn{
         display: none;
     }
+
     #check:checked ~ header .navigation{
         z-index: 2;
         position: fixed;
@@ -142,28 +157,34 @@ header .navigation a:hover{
         justify-content: center;
         align-items: center;
     }
+
     #check:checked ~ header .navigation a{
         font-weight: 700;
         margin-right: 0;
         margin-bottom: 50px;
         letter-spacing: 2px;
     }
+
     #check:checked ~ header label .menu-btn{
         display: none;
     }
+
     #check:checked ~ header label .close-btn{
         z-index: 2;
         display: block;
         position: fixed;
     }
+
     label .menu-btn{
         position: absolute;
         right: 2.4em;
     }
+
     header .logo{
         position: absolute;
         bottom: -6px;
-    } */
+        left: 2.4em;
+    }
 
     .content .info h2{
         font-size: 45px;

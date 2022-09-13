@@ -5,7 +5,6 @@
 //   // tracks result of search
 //   const [results, setResults] = useState(null);
 
-
 //   // fetches list of pets from Petfinder API
 //   useEffect(() => {
 //     if (accessToken === null) return;
