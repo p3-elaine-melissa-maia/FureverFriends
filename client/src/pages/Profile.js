@@ -1,30 +1,67 @@
 import React from 'react';
-// import { Link } from 'react-router-dom';
-// import { useQuery } from '@apollo/client';
-import '../styles/Home.css'
-import { Link } from "react-router-dom";
 
+import { Navigate, useParams } from 'react-router-dom';
+import { useQuery } from '@apollo/client';
+
+// import SkillsList from '../components/SkillsList';
+// import SkillForm from '../components/SkillForm';
+
+import { QUERY_SINGLE_USER, QUERY_ME } from '../utils/queries';
+
+import Auth from '../utils/auth';
 
 const Profile = () => {
-  // const { loading, data } = useQuery(QUERY_MATCHUPS, {
-  //   fetchPolicy: "no-cache"
-  // });
+  const { userId } = useParams();
 
-  // const matchupList = data?.matchups || [];
+  // If there is no `userId` in the URL as a parameter, execute the `QUERY_ME` query instead for the logged in user's information
+  const { loading, data } = useQuery(
+    userId ? QUERY_SINGLE_USER : QUERY_ME,
+    {
+      variables: { userId: userId },
+    }
+  );
+
+  // Check if data is returning from the `QUERY_ME` query, then the `QUERY_SINGLE_PROFILE` query
+  const user = data?.me || data?.user || {};
+
+  // Use React Router's `<Redirect />` component to redirect to personal profile page if username is yours
+  if (Auth.loggedIn() && Auth.getProfile().data._id === userId) {
+    return <Navigate to="/me" />;
+  }
+
+  if (loading) {
+    return <div>Loading...</div>;
+  }
+
+  if (!user?.userId) {
+    return (
+      <h4>
+        You need to be logged in to see your profile page. Use the navigation
+        links above to sign up or log in!
+      </h4>
+    );
+  }
 
   return (
-    <section>
-      {/* <Navbar></Navbar> */}
-      <div className="content">
-        <div className="info">
-            <h2> Find Your <br/> <span>Furever Friend <i className="fa-solid fa-heart"></i></span></h2>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum laboriosam illum ratione quas iste inventore provident laborum, voluptate, reiciendis voluptas officiis distinctio doloribus magni, reprehenderit tempora. Id, molestiae. Ipsam, consequatur.</p>
-            <Link to="/signup" href="./signup" className="signup-btn">Sign Up Now!</Link>
-            <Link to="/login" href="./login" className="login-btn">Log In</Link>
-        </div>
+    <div>
+      <h2 className="card-header">
+        {userId ? `${user.fullname}'s` : 'Your'} friends have endorsed these
+        skills...
+      </h2>
+
+      {/* {user.posts?.length > 0 && (
+        <SkillsList
+          posts={user.posts}
+          isLoggedInUser={!userId && true}
+        />
+      )} */}
+
+      {/* <div className="my-4 p-4" style={{ border: '1px dotted #1a1a1a' }}>
+        <SkillForm profileId={profile._id} />
+      </div> */}
     </div>
-  </section>
   );
 };
 
 export default Profile;
+
