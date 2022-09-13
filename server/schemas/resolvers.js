@@ -1,5 +1,5 @@
 const { User, Comment, Post } = require('../models');
-const { AuthenticationError, UserInputError } = require('apollo-server-express');
+const { AuthenticationError } = require('apollo-server-express');
 const { signToken } = require('../utils/auth');
 const stripe = require('stripe')('pk_test_51LgrUmCwzDCX8biEBVfXXeZWz9TwWi5yG2q9k7lVBhctG9y2HCrcy4AVcltXn5VKD3dbEcxNTOgzVggc1lekY2tJ00sHgXbKu8');
 
@@ -13,9 +13,6 @@ const resolvers = {
         path: 'posts',
         populate: 'comments'
       });
-    },
-    user: async (parent, { userId }) => {
-      return (await User.findOne({ _id: userId })).populate('posts');
     },
     posts: async () => {
       // populate comments subdocument when querying for posts
@@ -69,7 +66,7 @@ const resolvers = {
       const user = await User.create({ username, fullname, email, password });
       const token = signToken(user);
 
-      return { token, user };
+      return { token, profile };
     },
     login: async (parent, { email, password }) => {
       const user = await User.findOne({ email });
@@ -78,7 +75,7 @@ const resolvers = {
         throw new AuthenticationError('No user with this email found!')
       }
 
-      const correctPw = await user.isCorrectPassword(password);
+      const correctPw = await profile.isCorrectPassword(password);
 
       if (!correctPw) {
         throw new AuthenticationError('Incorrect password!');

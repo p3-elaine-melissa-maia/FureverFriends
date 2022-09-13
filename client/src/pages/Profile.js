@@ -1,68 +1,28 @@
 import React from 'react';
-
-
-import { Navigate, useParams } from 'react-router-dom';
-import { useQuery } from '@apollo/client';
-
-import PostList from '../components/PostList';
-// import SkillForm from '../components/SkillForm';
-
-import { QUERY_SINGLE_USER, QUERY_ME } from '../utils/queries';
-
-import Auth from '../utils/auth';
+// import { Link } from 'react-router-dom';
+// import { useQuery } from '@apollo/client';
+import '../styles/Home.css'
+import { Link } from "react-router-dom";
 
 const Profile = () => {
-  const { userId } = useParams();
+  // const { loading, data } = useQuery(QUERY_MATCHUPS, {
+  //   fetchPolicy: "no-cache"
+  // });
 
-  // If there is no `profileId` in the URL as a parameter, execute the `QUERY_ME` query instead for the logged in user's information
-  const { loading, data } = useQuery(
-    userId ? QUERY_SINGLE_USER : QUERY_ME,
-    {
-      variables: { userId: userId },
-    }
-  );
-
-  // Check if data is returning from the `QUERY_ME` query, then the `QUERY_SINGLE_PROFILE` query
-  const user = data?.me || data?.user || {};
-
-  // Use React Router's `<Navigate />` component to redirect to personal profile page if username is yours
-  if (Auth.loggedIn() && Auth.getUser().data._id === userId) {
-    return <Navigate to='/me' />;
-  }
-
-  if (loading) {
-    return <div>Loading...</div>;
-  }
-
-  if (!user?.username) {
-    return (
-      <h4>
-        You need to be logged in to see your profile page. Use the navigation
-        links above to sign up or log in!
-      </h4>
-    );
-  }
+  // const matchupList = data?.matchups || [];
 
   return (
-    <div>
-        <PostList/>
-      <h2 className="card-header">
-        {userId ? `${userId.fullname}'s` : 'Your'} friends have endorsed these
-        skills...
-      </h2>
-
-      {user.posts?.length > 0 && (
-        <PostList
-        //   posts={posts}
-          isLoggedInUser={!userId && true}
-        />
-      )}
-
-      {/* <div className="my-4 p-4" style={{ border: '1px dotted #1a1a1a' }}>
-        <SkillForm profileId={profile._id} />
-      </div> */}
+    <section>
+      {/* <Navbar></Navbar> */}
+      <div className="content">
+        <div className="info">
+            <h2> Find Your <br/> <span>Furever Friend <i className="fa-solid fa-heart"></i></span></h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum laboriosam illum ratione quas iste inventore provident laborum, voluptate, reiciendis voluptas officiis distinctio doloribus magni, reprehenderit tempora. Id, molestiae. Ipsam, consequatur.</p>
+            <Link to="/signup"><a href="./signup" className="signup-btn">Sign Up Now!</a></Link>
+            <Link to="/login"> <a href="./login" className="login-btn">Log In</a></Link>
+        </div>
     </div>
-
+  </section>
   );
 };
 

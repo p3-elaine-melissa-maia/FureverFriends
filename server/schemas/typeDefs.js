@@ -28,8 +28,6 @@ const typeDefs = gql`
   }
   type Query {
     users: [User]
-    user (userId: ID!): User
-    me: User
     posts(username: String, img: String, caption: String, comment: ID): [Post]
     comments(_id: String, username: String): [Comment]
   }
@@ -43,5 +41,4 @@ const typeDefs = gql`
     login(email: String!, password: String!): Auth
   }
 `;
-
 module.exports = typeDefs;
