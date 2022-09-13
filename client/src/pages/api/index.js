@@ -4,7 +4,6 @@
 // export default () => {
 //   // tracks result of search
 //   const [results, setResults] = useState(null);
-//   const accessToken = useContext(AuthContext);
 
 //   // fetches list of pets from Petfinder API
 //   useEffect(() => {
@@ -21,7 +20,6 @@
 //     };
 
 //     fetchPets();
-//     console.log(fetchPets)
 //   }, [accessToken]);
 
 //   // displays results

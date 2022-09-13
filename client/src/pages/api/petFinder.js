@@ -3,7 +3,7 @@
 // const AuthContext = createContext();
 
 // // provides application access to Petfinder API
-// function petFinderApp ({ Component, pageProps }) {
+// function petFinderAccess ({ Component, pageProps }) {
 //     const [accessToken, setAccessToken] = useState(null);
 
 //     useEffect (() => {
@@ -20,6 +20,7 @@
 //             <Component {...pageProps} />
 //         </AuthContext.Provider>
 //     );
-// }
+// };
 
-// export default petFinderApp;
+// export default petFinderAccess;
+

@@ -1,30 +1,70 @@
-import React from 'react';
-// import { Link } from 'react-router-dom';
-// import { useQuery } from '@apollo/client';
-import '../styles/Home.css'
-import { Link } from "react-router-dom";
+// import { useEffect, useState } from "react";
+// import React from 'react';
+// import axios from "axios";
+// import '../styles/Home.css'
+
+// function petFinderForm() {
+//   const [values, setValues] = useState ({
+//     species: "",
+//     zip: "",
+
+//   });
+
+//   const handleSpeciesInput = (event) => {
+//     setValues({...values, species: event.target.value})
+//   };
+
+//   const handleZipInput = (event) => {
+//     setValues({...values, zip: event.target.value})
+//   };
+
+//   return (
+//     <div class="form-container">
+//       <form class="pet-finder-form">
+//       <label>
+//           Pick your species:
+//           <select onChange={handleSpeciesInput}>
+//             <option value="Cat">Cat</option>
+//             <option value="Dog">Dog</option>
+//           </select>
+//         </label>
+//         <label 
+//         type="string"
+//         onChange={handleZipInput}
+//         value={values.zip}
+//         class="form-field"
+//         name="zip">
+//         </label>
+        
+//       </form>
+//     </div>
+//   )
+// };
 
 
-const Adopt = () => {
-  // const { loading, data } = useQuery(QUERY_MATCHUPS, {
-  //   fetchPolicy: "no-cache"
-  // });
+// function Adopt() {
+//   const url = "https://api.petfinder.com/v2/animals"
+//   const [pets, setPets] = useState(null)
 
-  // const matchupList = data?.matchups || [];
+//   useEffect(() => {
+//     axios.get(url)
+//       .then(response => {
+//         setPets(response.data)
 
-  return (
-    <section>
-      {/* <Navbar></Navbar> */}
-      <div className="content">
-        <div className="info">
-            <h2> Find Your <br/> <span>Furever Friend <i className="fa-solid fa-heart"></i></span></h2>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum laboriosam illum ratione quas iste inventore provident laborum, voluptate, reiciendis voluptas officiis distinctio doloribus magni, reprehenderit tempora. Id, molestiae. Ipsam, consequatur.</p>
-            <Link to="/signup" href="./signup" className="signup-btn">Sign Up Now!</Link>
-            <Link to="/login" href="./login" className="login-btn">Log In</Link>
-        </div>
-    </div>
-  </section>
-  );
-};
+//       })
+//   }, [url]);
 
-export default Adopt;
+//   if (pets) {
+//     return (
+//      <div></div>
+//     )
+//   };
+
+//   return (
+//     <div>
+
+//     </div>
+//   )
+// };
+
+// export default Adopt;
