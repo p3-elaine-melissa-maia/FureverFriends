@@ -1,30 +1,45 @@
 import React from 'react';
-// import { Link } from 'react-router-dom';
-// import { useQuery } from '@apollo/client';
 import '../styles/Home.css'
+import Card from "../components/CardPayment";
 import { Link } from "react-router-dom";
 
 
-const Donate = () => {
-  // const { loading, data } = useQuery(QUERY_MATCHUPS, {
-  //   fetchPolicy: "no-cache"
-  // });
-
-  // const matchupList = data?.matchups || [];
-
+function Donate({ transition }) {
   return (
-    <section>
-      {/* <Navbar></Navbar> */}
-      <div className="content">
-        <div className="info">
-            <h2> Find Your <br/> <span>Furever Friend <i className="fa-solid fa-heart"></i></span></h2>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum laboriosam illum ratione quas iste inventore provident laborum, voluptate, reiciendis voluptas officiis distinctio doloribus magni, reprehenderit tempora. Id, molestiae. Ipsam, consequatur.</p>
-            <Link to="/signup"><a href="./signup" className="signup-btn">Sign Up Now!</a></Link>
-            <Link to="/login"> <a href="./login" className="login-btn">Log In</a></Link>
-        </div>
-    </div>
-  </section>
+    <>
+      <Nav />
+      <Spring
+        from={transition.from}
+        to={transition.to}
+        config={transition.config}
+      >
+        {(props) => (
+          <animated.div style={props}>
+           <div style={{marginTop:'100px'}}>
+            <div
+              className="container mt-5"
+              style={{ display: "flex", fontFamily: "Karla sans-serif" }}
+            >
+              <Container className="text-center" style={{ paddingRight: "30px" }}>
+                <img
+                  style={{ margin: "0 auto", display: "block", borderRadius: "75px" }}
+                  src={logo}
+                  alt='EcoLivin Logo'
+                  height="150px"
+                ></img>
+                <p className="py-3">
+                  Insert Text Here
+                </p>
+              </Container>
+              <Container style={{ border: "2px solid #703043" }}>
+                <Card />
+              </Container>
+            </div>
+          </div>
+          </animated.div>)}
+      </Spring>
+    </>
   );
-};
+}
 
 export default Donate;

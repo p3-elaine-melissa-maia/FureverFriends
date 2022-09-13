@@ -4,7 +4,6 @@ import React from 'react';
 import '../styles/Home.css'
 import { Link } from "react-router-dom";
 
-
 const Team = () => {
   // const { loading, data } = useQuery(QUERY_MATCHUPS, {
   //   fetchPolicy: "no-cache"
