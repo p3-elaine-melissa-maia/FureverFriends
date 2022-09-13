@@ -1,49 +1,70 @@
-import { useState } from "react";
-import React from 'react';
-// import { Link } from 'react-router-dom';
-// import { useQuery } from '@apollo/client';
-import '../styles/Home.css'
+// import { useEffect, useState } from "react";
+// import React from 'react';
+// import axios from "axios";
+// import '../styles/Home.css'
 
-function Adopt() {
-  const [inputs, setInputs] = useState({});
+// function petFinderForm() {
+//   const [values, setValues] = useState ({
+//     species: "",
+//     zip: "",
 
-  const handleChange = (event) => {
-    const name = event.target.name;
-    const value = event.target.value;
-    setInputs(values => ({...values, [name]: value}))
-  }
+//   });
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    console.log(inputs);
-  }
+//   const handleSpeciesInput = (event) => {
+//     setValues({...values, species: event.target.value})
+//   };
 
-  return (
-    <form onSubmit={handleSubmit}>
-      <label>Select a species.</label>
-      <select
-        id="species"
-        value={inputs.species}
-        onChange={handleChange}
-        name="species"
-        >
+//   const handleZipInput = (event) => {
+//     setValues({...values, zip: event.target.value})
+//   };
 
-        <option value="dog">Dog</option>
-        <option value="cat">Cat</option>
-        </select>
-
-      <label>Enter ZIP Code:
-        <input 
-          type="number" 
-          name="zip" 
-          value={inputs.zip || ""} 
-          onChange={handleChange}
-        />
-        </label>
-        <input type="submit" />
-    </form>
-  )
-}
+//   return (
+//     <div class="form-container">
+//       <form class="pet-finder-form">
+//       <label>
+//           Pick your species:
+//           <select onChange={handleSpeciesInput}>
+//             <option value="Cat">Cat</option>
+//             <option value="Dog">Dog</option>
+//           </select>
+//         </label>
+//         <label 
+//         type="string"
+//         onChange={handleZipInput}
+//         value={values.zip}
+//         class="form-field"
+//         name="zip">
+//         </label>
+        
+//       </form>
+//     </div>
+//   )
+// };
 
 
-export default Adopt;
+// function Adopt() {
+//   const url = "https://api.petfinder.com/v2/animals"
+//   const [pets, setPets] = useState(null)
+
+//   useEffect(() => {
+//     axios.get(url)
+//       .then(response => {
+//         setPets(response.data)
+
+//       })
+//   }, [url]);
+
+//   if (pets) {
+//     return (
+//      <div></div>
+//     )
+//   };
+
+//   return (
+//     <div>
+
+//     </div>
+//   )
+// };
+
+// export default Adopt;
