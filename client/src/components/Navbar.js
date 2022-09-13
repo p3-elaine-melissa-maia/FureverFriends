@@ -16,7 +16,7 @@ function Navbar() {
           <Link to="/donate">Donate Here</Link>
           <Link to="/team">Our Team</Link>
         </div>
-        <label htmlFor="check">
+        <label for="check">
           <i className="fas fa-bars menu-btn"></i>
           <i className="fas fa-times close-btn"></i>
         </label>
