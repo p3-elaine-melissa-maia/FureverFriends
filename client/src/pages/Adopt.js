@@ -1,48 +1,30 @@
-import { useState } from "react";
 import React from 'react';
 // import { Link } from 'react-router-dom';
 // import { useQuery } from '@apollo/client';
 import '../styles/Home.css'
+import { Link } from "react-router-dom";
 
-function Adopt() {
-  const [inputs, setInputs] = useState({});
 
-  const handleChange = (event) => {
-    const name = event.target.name;
-    const value = event.target.value;
-    setInputs(values => ({...values, [name]: value}))
-  }
+const Adopt = () => {
+  // const { loading, data } = useQuery(QUERY_MATCHUPS, {
+  //   fetchPolicy: "no-cache"
+  // });
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    console.log(inputs);
-  }
+  // const matchupList = data?.matchups || [];
 
   return (
-    <form onSubmit={handleSubmit}>
-      <label>Select a species.</label>
-      <select
-        id="species"
-        value={inputs.species}
-        onChange={handleChange}
-        name="species"
-        >
-
-        <option value="dog">Dog</option>
-        <option value="cat">Cat</option>
-        </select>
-
-      <label>Enter ZIP Code:
-        <input 
-          type="number" 
-          name="zip" 
-          value={inputs.zip || ""} 
-          onChange={handleChange}
-        />
-        </label>
-        <input type="submit" />
-    </form>
-  )
-}
+    <section>
+      {/* <Navbar></Navbar> */}
+      <div className="content">
+        <div className="info">
+            <h2> Find Your <br/> <span>Furever Friend <i className="fa-solid fa-heart"></i></span></h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum laboriosam illum ratione quas iste inventore provident laborum, voluptate, reiciendis voluptas officiis distinctio doloribus magni, reprehenderit tempora. Id, molestiae. Ipsam, consequatur.</p>
+            <Link to="/signup" href="./signup" className="signup-btn">Sign Up Now!</Link>
+            <Link to="/login" href="./login" className="login-btn">Log In</Link>
+        </div>
+    </div>
+  </section>
+  );
+};
 
 export default Adopt;

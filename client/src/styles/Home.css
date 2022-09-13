@@ -29,7 +29,6 @@ section {
     align-items: center;
     background: #ECF5A8;
 }
-
 header .logo{
     position: relative;
     color: #8DD9D1;
@@ -39,7 +38,6 @@ header .logo{
     font-weight: 800;
     letter-spacing: 1px;
 }
-
 header .navigation a{
     color: #8DD9D1;
     background: #ECF5A8;
@@ -49,11 +47,9 @@ header .navigation a{
     padding: 2px 15px;
     border-radius: 20px;
 }
-
 header .navigation a:not(:last-child){
     margin-right: 30px;
 }
-
 header .navigation a:hover{
     color: #49AAf5;
 } */
@@ -121,22 +117,18 @@ header .navigation a:hover{
     /* header .navigation{
         display: none;
     }
-
     label{
         display: block;
         font-size: 25px;
         cursor: pointer;
         color: #8DD9D1;
     }
-
     label:hover{
         color: #49AAf5;
     }
-
     label .close-btn{
         display: none;
     }
-
     #check:checked ~ header .navigation{
         z-index: 2;
         position: fixed;
@@ -150,29 +142,24 @@ header .navigation a:hover{
         justify-content: center;
         align-items: center;
     }
-
     #check:checked ~ header .navigation a{
         font-weight: 700;
         margin-right: 0;
         margin-bottom: 50px;
         letter-spacing: 2px;
     }
-
     #check:checked ~ header label .menu-btn{
         display: none;
     }
-
     #check:checked ~ header label .close-btn{
         z-index: 2;
         display: block;
         position: fixed;
     }
-
     label .menu-btn{
         position: absolute;
         right: 2.4em;
     }
-
     header .logo{
         position: absolute;
         bottom: -6px;
