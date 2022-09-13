@@ -11,6 +11,16 @@ const resolvers = {
         populate: 'comments'
       });
     },
+    user: async (parent, { userId }) => {
+      return User.findOne({ _id: userId });
+    },
+    // By adding context to our query, we can retrieve the logged in user without specifically searching for them
+    me: async (parent, args, context) => {
+      if (context.user) {
+        return User.findOne({ _id: context.user._id });
+      }
+      throw new AuthenticationError('You need to be logged in!');
+    },
     posts: async () => {
       // populate comments subdocument when querying for posts
       return await Post.find({}).populate('comments');
@@ -25,7 +35,7 @@ const resolvers = {
       const user = await User.create({ username, fullname, email, password });
       const token = signToken(user);
 
-      return { token, profile };
+      return { token, user };
     },
     login: async (parent, { email, password }) => {
       const user = await User.findOne({ email });
@@ -34,7 +44,7 @@ const resolvers = {
         throw new AuthenticationError('No user with this email found!')
       }
 
-      const correctPw = await profile.isCorrectPassword(password);
+      const correctPw = await user.isCorrectPassword(password);
 
       if (!correctPw) {
         throw new AuthenticationError('Incorrect password!');
