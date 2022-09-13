@@ -5,7 +5,6 @@ import '../styles/Team.css'
 import placeholder from '../assets/placeholder.png'
 import { Link } from "react-router-dom";
 
-
 const Team = () => {
   return (
     <section>
