@@ -81,7 +81,7 @@ function App() {
             />
 
 
-            <Route path="/team" element={<Team />} />
+            {/* <Route path="/team" element={<Team />} /> */}
 
           </Routes>
         </div>
