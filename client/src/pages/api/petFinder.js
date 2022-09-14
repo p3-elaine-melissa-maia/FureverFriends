@@ -1,26 +1,36 @@
-// import { useEffect, createContext, useState } from "react";
+import React from "react";
 
-// const AuthContext = createContext();
+export default class PetFinder extends React.Component {
 
-// // provides application access to Petfinder API
-// function petFinderAccess ({ Component, pageProps }) {
-//     const [accessToken, setAccessToken] = useState(null);
+    state = {
+        loading: true
+    };
 
-//     useEffect (() => {
-//         const fetchAccessToken = async () => {
-//             const res = await fetch("/api/oauth-token");
-//             const json = await res.json();
-//             setAccessToken(json.access_token);
-//         };
-//         fetchAccessToken();
-//     }, []);
+    async componentDidMount() {
+        const url = "https://api.petfinder.com/v2/animals";
+        const response = await fetch(url);
+        const data = await response.json();
+        this.setState({ person: data.results[0], loading: false });
+        console.log(data.results[0]);
+    }
 
-//     return (
-//         <AuthContext.Provider>
-//             <Component {...pageProps} />
-//         </AuthContext.Provider>
-//     );
-// };
+    render() {
 
-// export default petFinderAccess;
+        if (this.state.loading) {
+            return <div>loading...</div>;
+        }
+        
+        if (!this.state.person) {
+            return <div>Could not find a person</div>;
+        }
 
+        return (
+                    <div>
+                    <div>{this.state.person.name}</div>
+                    <div>{this.state.person.breed}</div>
+                    <div>{this.state.person.size}</div>
+                    <div>{this.state.person.gender}</div>
+                    <div>{this.state.person.age}</div>
+                    </div>) }
+        
+    }
