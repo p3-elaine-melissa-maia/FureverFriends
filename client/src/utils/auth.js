@@ -31,7 +31,11 @@ class AuthService {
     // Saves user token to localStorage
     localStorage.setItem('id_token', idToken);
 
-    window.location.assign('/');
+    console.log(decode(idToken).data._id);
+    const userId = decode(idToken).data._id;
+  
+    //decoded token info here
+    window.location.assign(`/profile/${userId}`);
   }
 
   logout() {
