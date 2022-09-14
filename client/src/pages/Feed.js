@@ -1,30 +1,41 @@
 import React from 'react';
-// import { Link } from 'react-router-dom';
-// import { useQuery } from '@apollo/client';
-import '../styles/Home.css'
-import { Link } from "react-router-dom";
+import { Link } from 'react-router-dom';
 
-
-const Feed = () => {
-  // const { loading, data } = useQuery(QUERY_MATCHUPS, {
-  //   fetchPolicy: "no-cache"
-  // });
-
-  // const matchupList = data?.matchups || [];
+const Feed = ({ users, posts }) => {
+  if (!users.length) {
+    return <h3>No Posts Yet</h3>;
+  }
 
   return (
-    <section>
-      {/* <Navbar></Navbar> */}
-      <div className="content">
-        <div className="info">
-            <h2> Find Your <br/> <span>Furever Friend <i className="fa-solid fa-heart"></i></span></h2>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum laboriosam illum ratione quas iste inventore provident laborum, voluptate, reiciendis voluptas officiis distinctio doloribus magni, reprehenderit tempora. Id, molestiae. Ipsam, consequatur.</p>
-            <Link to="/signup" href="./signup" className="signup-btn">Sign Up Now!</Link>
-            <Link to="/login" href="./login" className="login-btn">Log In</Link>
-        </div>
+    <div>
+      {/* <h3 className="text-primary"></h3> */}
+      <div className="flex-row justify-space-between my-4">
+        {users &&
+          users.map((user) => (
+            <div key={user._id} className="col-12 col-xl-6">
+              <div className="card mb-3">
+                <h4 className="card-header bg-dark text-light p-2 m-0">
+                  {user.username} <br />
+                  <span className="text-white" style={{ fontSize: '1rem' }}>
+                    currently has {user.posts ? user.posts.length : 0}{' '}
+                    endorsed skill
+                    {user.posts && user.posts.length === 1 ? '' : 's'}
+                  </span>
+                </h4>
+
+                <Link
+                  className="btn btn-block btn-squared btn-light text-dark"
+                  to={`/profiles/${user._id}`}
+                >
+                  View and endorse their skills.
+                </Link>
+              </div>
+            </div>
+          ))}
+      </div>
     </div>
-  </section>
   );
 };
 
 export default Feed;
+

@@ -22,11 +22,30 @@ const Profile = () => {
   );
 
   // Check if data is returning from the `QUERY_ME` query, then the `QUERY_SINGLE_PROFILE` query
-  const user = data?.me || data?.user || {};
+  const user =  data?.user || {};
 
   // Use React Router's `<Redirect />` component to redirect to personal profile page if username is yours
   if (Auth.loggedIn() && Auth.getProfile().data._id === userId) {
-    return <Navigate to="/me" />;
+    // return <Navigate to={`/profile/${userId}`} />;
+    return (
+      <div>
+        <h2 className="card-header">
+          {userId ? `${user.fullname}'s` : 'Your'} friends have endorsed these
+          skills...
+        </h2>
+  
+        {user.posts?.length > 0 && (
+          <PostList
+            posts={user.posts}
+            isLoggedInUser={!userId && true}
+          />
+        )}
+  
+        {/* <div className="my-4 p-4" style={{ border: '1px dotted #1a1a1a' }}>
+          <SkillForm profileId={profile._id} />
+        </div> */}
+      </div>
+    );
   }
 
   if (loading) {
@@ -42,25 +61,7 @@ const Profile = () => {
     );
   }
 
-  return (
-    <div>
-      <h2 className="card-header">
-        {userId ? `${user.fullname}'s` : 'Your'} friends have endorsed these
-        skills...
-      </h2>
-
-      {user.posts?.length > 0 && (
-        <PostList
-          posts={user.posts}
-          isLoggedInUser={!userId && true}
-        />
-      )}
-
-      {/* <div className="my-4 p-4" style={{ border: '1px dotted #1a1a1a' }}>
-        <SkillForm profileId={profile._id} />
-      </div> */}
-    </div>
-  );
+  
 };
 
 export default Profile;
