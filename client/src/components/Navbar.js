@@ -4,8 +4,8 @@ import { Link } from "react-router-dom";
 import Auth from "../utils/auth";
 
 function Navbar() {
-  const userId = Auth.getProfile().data._id;
-  console.log(userId);
+  // const userId = Auth.getProfile().data._id;
+  // console.log(userId);
 
   if (Auth.loggedIn()) {
     return (
@@ -17,7 +17,7 @@ function Navbar() {
         </h2>
         <div className="navigation">
           <Link to="/">Home</Link>
-          <Link to={`/profile/${userId}`}>Profile</Link>
+          {/* <Link to={`/profile/${userId}`}>Profile</Link> */}
           <Link to="/adopt">Adopt</Link>
           <Link to="/donate">Donate Here</Link>
           <Link to="/team">Our Team</Link>
